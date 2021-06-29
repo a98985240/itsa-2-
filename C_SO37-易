@@ -1,0 +1,46 @@
+/*[C_SO37-易] 不誠實不給獎*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+
+bool mycompare(int a,int b)
+{
+    return a>b;
+}
+
+
+int main()
+{
+    int score[30];
+    int number;
+    int first=-1;
+    int second=-1;
+    cin >> number ;
+    for(int i=0;i<number;i++)
+    {
+        cin >> score[i];
+        if(score[i]%2!=0)
+            score[i]=0;
+    }
+    sort(score,score+number,mycompare);
+    if(score[0]>=90)
+    {
+        first=score[0];
+        cout << first <<endl ;
+    }
+    else
+    {
+        cout << "x" << endl;
+    }
+    if(score[1]>=90)
+    {
+        second=score[1];
+        cout << second << endl ;
+    }
+    else
+    {
+        cout << "x" << endl;
+    }
+}
