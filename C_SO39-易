@@ -1,0 +1,55 @@
+/*[C_SO39-易] 團體排名*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+struct nation{
+    int gold_num;
+    int silver_num;
+    int copper_num;
+    char s[30];
+}nations[30];
+
+
+bool my_compare(nation n1,nation n2)
+{
+    if(n1.gold_num!=n2.gold_num)
+        return n1.gold_num>n2.gold_num;
+    else if(n1.silver_num!=n2.silver_num)
+        return n1.silver_num>n2.silver_num;
+    else if(n1.copper_num!=n2.copper_num)
+        return n1.copper_num>n2.copper_num;
+    else if(strcmp(n1.s,n2.s)!=0)
+    {
+        //cout <<"compare"<<endl;
+        return n1.s[0]<n2.s[0];
+    }
+}
+
+int main()
+{
+    int number;
+    int gold_max;
+    int silver_max;
+    int copper_max;
+    cin >> number;
+    for(int i=0;i<number;i++)
+    {
+        cin >>nations[i].s >>nations[i].gold_num>>nations[i].silver_num>>nations[i].copper_num;
+    }
+    sort(nations,nations+number,my_compare);
+    gold_max=nations[0].gold_num;
+    silver_max=nations[0].silver_num;
+    copper_max=nations[0].copper_num;
+    cout << nations[0].s << endl;
+    for(int i=1;i<number;i++)
+    {
+        if(nations[i].gold_num==gold_max&&nations[i].silver_num==silver_max&&nations[i].copper_num==copper_max)
+        {
+            cout << nations[i].s <<endl;
+        }
+        else 
+            break;
+    }
+}
