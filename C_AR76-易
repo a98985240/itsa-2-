@@ -1,0 +1,63 @@
+/*[C_AR76-易] 提款機程式*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+#include <cmath>
+using namespace std;
+
+struct account{
+    int acc;
+    int pass;
+    int money;
+}accounts[6];
+
+
+int main()
+{  
+    int times;
+    accounts[0].acc=123;
+    accounts[0].pass=456;
+    accounts[0].money=9000;
+    accounts[1].acc=456;
+    accounts[1].pass=789;
+    accounts[1].money=5000;
+    accounts[2].acc=789;
+    accounts[2].pass=888;
+    accounts[2].money=6000;
+    accounts[3].acc=336;
+    accounts[3].pass=558;
+    accounts[3].money=10000;
+    accounts[4].acc=775;
+    accounts[4].pass=666;
+    accounts[4].money=12000;
+    accounts[5].acc=566;
+    accounts[5].pass=221;
+    accounts[5].money=7000;
+    cin >> times;
+    for(int i=0;i<times;i++)
+    {
+        int tmp_acc,tmp_pass;
+        int is_find=0;
+        cin >> tmp_acc >> tmp_pass ;
+        for(int j=0;j<6;j++)
+        {
+            if(accounts[j].acc==tmp_acc)
+            {
+                is_find=1;
+                if(accounts[j].pass!=tmp_pass)
+                {
+                    cout << "error" << endl;
+                }
+                else
+                {
+                    cout << accounts[j].money << endl ;
+                }
+            }
+        }
+        if(is_find==0)
+        {
+            cout << "error" << endl;
+        }
+    }
+
+}
