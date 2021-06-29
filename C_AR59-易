@@ -1,0 +1,58 @@
+/*[C_AR59-易] 好數問題*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int num;
+    cin >> num;
+    for(int i=0;i<num;i++)
+    {
+        char str[10];
+        int times[4]={0};
+        cin >> str;
+        int len= strlen(str);
+        int is_valid=0;
+        if(len!=4)
+        {
+            cout << "Failure Input" <<endl;
+            continue;
+        }
+        for(int j=0;j<4;j++)
+        {
+            for(int k=0;k<4;k++)
+            {
+                if(str[j]==str[k])
+                {
+                    times[j]++;
+                }
+            }
+        }
+        for(int j=0;j<4;j++)
+        {
+            //cout << times[j] << endl ;
+            if(times[j]==2)
+            {
+                is_valid=1;
+                for(int k=0;k<4;k++)
+                {
+                    if(times[k]==2&&str[k]!=str[j])
+                    {
+                        //cout << "!!!";
+                        is_valid=0;
+                    }
+                }
+            }
+        }
+        if(is_valid==1)
+        {
+            cout << "Yes" << endl;
+        }
+        else
+            cout << "No" << endl;
+        
+    }
+}
