@@ -1,0 +1,90 @@
+/*[C_AR71-易] 他是你們的孩子嗎？*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int num;
+    cin >> num;
+    for (int i = 0; i < num; i++)
+    {
+        int is_true=0;
+        char F[3],M[3],C[3];
+        cin >> F >> M >> C;
+        if (strcmp(F, "A") == 0)
+        {
+            if (strcmp(M, "AB") == 0 && strcmp(C, "O") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "A") == 0 && strcmp(C, "B") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "A") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "B") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else
+                is_true=1;
+        }
+        else if (strcmp(F, "B") == 0)
+        {
+            if (strcmp(M, "AB") == 0 && strcmp(C, "O") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "B") == 0 && strcmp(C, "A") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "B") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "A") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else
+                is_true=1;      
+        }
+        else if (strcmp(F, "O") == 0)
+        {
+            if (strcmp(M, "AB") == 0 && strcmp(C, "O") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "AB") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "B") == 0 && strcmp(C, "A") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "B") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "A") == 0 && strcmp(C, "B") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "A") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "A") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "B") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else 
+                is_true=1;
+        }
+        else if (strcmp(F, "AB") == 0)
+        {
+            if (strcmp(M, "AB") == 0 && strcmp(C, "O") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "B") == 0 && strcmp(C, "O") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "A") == 0 && strcmp(C, "O") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "AB") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else if (strcmp(M, "O") == 0 && strcmp(C, "O") == 0)
+                cout << "IMPOSSIBLE" << endl;
+            else    
+                is_true=1;
+        }
+        if(is_true==1)
+        {
+            cout << "YES" <<endl;
+        }
+    }
+}
