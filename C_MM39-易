@@ -1,0 +1,27 @@
+/*[C_MM39-易] 判斷是何種三角形*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+bool cp(int a , int b)
+{
+    return a>b;
+}
+
+int main()
+{
+    int array[3];
+    while(scanf("%d %d %d",&array[0],&array[1],&array[2])!=EOF)
+    {
+        sort(array,array+3,cp);
+        if(array[0]>=(array[1]+array[2]))
+            cout <<"Not Triangle"<<endl;
+        else if(array[0]*array[0]==(array[1]*array[1]+array[2]*array[2]))
+            cout <<"Right Triangle"<<endl;
+        else if(array[0]*array[0]>(array[1]*array[1]+array[2]*array[2]))
+            cout <<"Obtuse Triangle"<<endl;
+        else if(array[0]*array[0]<(array[1]*array[1]+array[2]*array[2]))
+            cout <<"Acute Triangle"<<endl;
+    }
+}
