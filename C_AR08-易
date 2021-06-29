@@ -1,0 +1,43 @@
+/*[C_AR08-易] 找出數字字串中的最大質數*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    char s[30];
+    cin >> s;
+    int len = strlen(s);
+    int max = -1;
+    for(int i=0;i<len;i++)
+    {
+        for(int j=i;j<len;j++)
+        {
+            string str(s,i,len-j);
+            int num=stoi(str);
+            int is_prime=1;
+            for(int k=2;k<=num/2;k++)
+            {
+                if(num%k==0)
+                {
+                    is_prime=0;
+                }
+            }
+            if(is_prime==1)
+            {
+                if(num>max)
+                {
+                    max=num;
+                }
+            }
+        }
+    }
+    if(max==-1)
+    {
+        cout <<"No prime found"<<endl;
+    }
+    else
+        cout <<max<<endl;
+}
