@@ -1,0 +1,15 @@
+/*[C_MM01-易] 計算梯型面積*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int top,bottom,height;
+    while(scanf("%d %d %d",&top,&bottom,&height)!=EOF)
+    {
+        float area = (float)(top+bottom)*height*0.5;
+        printf("Trapezoid area:%.1f\n",area);
+    }
+}
