@@ -1,0 +1,22 @@
+/*[C_MM25-易] 計算正整數被3整除之數值之總和*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    while (scanf("%d", &n) != EOF)
+    {
+        int total = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 3 == 0)
+            {
+                total += i;
+            }
+        }
+        cout <<total<<endl;
+    }
+}
