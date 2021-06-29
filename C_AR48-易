@@ -1,0 +1,35 @@
+/*[C_AR48-易] 數字加密*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+#include <cmath>
+using namespace std;
+
+
+
+
+int main()
+{
+    char str[5];
+    int array[5];
+    char buffer[50];
+    cin >> str;
+    int tmp;
+    for(int i=0;i<4;i++)
+    {
+        int num=(int)(str[i]-48);
+        //cout <<"str:" <<str[i] <<endl;
+        //cout << "num:"<<num <<endl;
+        num+=7;
+        num%=10;
+        array[i]=num;
+        //cout <<array[i]<<endl;
+    }
+    tmp= array[0];
+    array[0]=array[2];
+    array[2]=tmp;
+    tmp=array[1];
+    array[1]=array[3];
+    array[3]=tmp;
+    cout << array[0]<<array[1]<<array[2]<<array[3]<< endl;
+}
