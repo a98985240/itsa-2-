@@ -1,0 +1,55 @@
+/*[C_SO25-易] 判斷序列是否經過排序*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    char s[30];
+    int times;
+    cin >> times;
+    const char *d = ",";
+    for (int i = 0; i < times; i++)
+    {
+        cin >> s;
+        int tmp_1=-1;
+        int tmp_2=-1;
+        int is_smaller=0;
+        int is_larger=0;
+        char *p;
+        p = strtok(s, d);
+        while (p)
+        {
+            tmp_2=stoi(p);
+            if(tmp_1>0&&tmp_2>0)
+            {
+                if(tmp_2>tmp_1)
+                {
+                    is_larger++;
+                }
+                else if(tmp_1>tmp_2)
+                {
+                    is_smaller++;
+                }
+            }
+            tmp_1=tmp_2;
+            p = strtok(NULL, d);
+        }
+        if(is_smaller&&is_larger)
+        {
+            cout << "NOON" << endl ;
+        }
+        else if(is_smaller&&!is_larger)
+        {
+            cout << "DESC" <<endl;
+        }
+        else if(is_larger&&!is_smaller)
+        {
+            cout << "ASC" << endl;
+        }
+        else
+            cout << "ASC" << endl;
+        memset(s,'\0',30);
+    }
+}
