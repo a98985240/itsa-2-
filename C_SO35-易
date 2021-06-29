@@ -1,0 +1,17 @@
+/* [C_SO35-易] 排序數字 */
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int array[7]={1,6,9,23,56,95,-1};
+    cin >> array[6];
+    sort(array,array+7);
+    for(int i=0;i<6;i++)
+    {
+        cout <<  array[i] <<",";
+    }
+    cout << array[6] <<endl;
+}
