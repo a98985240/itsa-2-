@@ -1,0 +1,21 @@
+/*[C_MM40-易] 1~N之間的總和*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int num;
+    int total=0;
+    cin >> num;
+    for(int i=1;i<num;i++)
+    {
+        cout << i <<" + ";
+        total+=i;
+    }
+    cout <<num <<" = ";
+    total+=num;
+    cout <<total<<endl;
+
+}
