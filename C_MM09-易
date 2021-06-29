@@ -1,0 +1,26 @@
+/*[C_MM09-易] 計算 i 次方的值*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    while(scanf("%d",&n)!=EOF)
+    {
+        long long int total=1;
+        for(int i=0;i<n;i++)
+        {
+            total*=2;
+        }
+        if(n>31)
+        {
+            cout <<"Value of more than 31"<<endl;
+        }
+        else
+        {
+            cout <<total << endl;
+        }
+    }
+}
