@@ -1,0 +1,40 @@
+/*[C_AR33-易] 轉置矩陣*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n,m,o,p;
+    int array[30][30];
+    int trans[30][30];
+    cin >> n >>m;
+    o=m;
+    p=n;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            cin >> array[i][j];
+        }
+    }
+    for(int i=0;i<o;i++)
+    {
+        for(int j=0;j<p;j++)
+        {
+            trans[i][j]=array[j][i];
+        }
+    }
+    for(int i=0;i<o;i++)
+    {
+        for(int j=0;j<p-1;j++)
+        {
+            cout << trans[i][j] << " ";
+        }
+        cout << trans[i][p-1];
+        cout << endl;
+    }
+    //cout << endl;
+}
