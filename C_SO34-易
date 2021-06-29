@@ -1,0 +1,33 @@
+/*[C_SO34-易] 找出最大值、最小值*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main()
+{
+    int num;
+    float array[30];
+    float max;
+    float min;
+    cin >> num;
+    for(int i=0;i<num;i++)
+    {
+        cin >> array[i];
+    }
+    min=array[0];
+    max=array[0];
+    for(int i=0;i<num;i++)
+    {
+        if(array[i]>max)
+        {
+            max = array[i];
+        }
+        if(array[i]<min)
+        {
+            min=array[i];
+        }
+    }
+    printf("%.2f\n",max);
+    printf("%.2f\n",min);
+}
