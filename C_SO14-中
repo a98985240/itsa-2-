@@ -1,0 +1,16 @@
+/* [C_SO14-中] 求中位數 */
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int array[5];
+    cin >> array[0] >> array[1] >> array[2] >>array[3] >> array[4] ;
+    while(!(array[0]==0&&array[1]==0&&array[2]==0&&array[3]==0&&array[4]==0))
+    {
+        sort(array,array+5);
+        cout << array[2] <<endl;
+        cin >> array[0] >> array[1] >> array[2] >>array[3] >> array[4] ;
+    }
+}
