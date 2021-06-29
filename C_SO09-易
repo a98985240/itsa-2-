@@ -1,0 +1,29 @@
+/*[C_SO09-易] 字串重排*/
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+bool mycompare(char a,char b)
+{
+    return a>b;
+}
+
+
+
+int main()
+{
+    char str[30];
+    while(scanf("%s",str)!=EOF)
+    {
+        int len=strlen(str);
+        //cout << len << endl;
+        sort(str,str+len,mycompare);
+        for(int i=0;i<len;i++)
+            cout << str[i];
+        cout << endl ;
+        memset(str,'\0',30);  
+        //cin >> str; 
+    }
+
+}
